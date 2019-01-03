@@ -1,20 +1,22 @@
 {
-  "name": "view-dns",
+  "name": "dnstools",
   "version": "1.0.0",
-  "description": "A view dns api bindings for javascript",
+  "description": "An all in one dns related tools",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tbhaxor/viewdns-js.git"
+    "url": "git+https://github.com/tbhaxor/dnstools.git"
   },
   "keywords": [
     "view-dns",
     "tbhaxor",
     "dns",
-    "api"
+    "api",
+    "dnstools",
+    "tools"
   ],
   "author": "",
   "license": "ISC",
