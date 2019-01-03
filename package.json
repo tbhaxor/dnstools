@@ -24,5 +24,6 @@
   "homepage": "https://github.com/tbhaxor/viewdns-js#readme",
   "devDependencies": {
     "@types/node": "^10.12.18"
-  }
+  },
+  "dependencies": {}
 }
