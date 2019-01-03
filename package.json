@@ -1,0 +1,25 @@
+{
+  "name": "view-dns",
+  "version": "1.0.0",
+  "description": "A view dns api bindings for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbhaxor/viewdns-js.git"
+  },
+  "keywords": [
+    "view-dns",
+    "tbhaxor",
+    "dns",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbhaxor/viewdns-js/issues"
+  },
+  "homepage": "https://github.com/tbhaxor/viewdns-js#readme"
+}
