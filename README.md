@@ -1,4 +1,4 @@
-# DNS Tools [![Build](https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square)](https://travis-ci.org/tbhaxor/dnstools)![Downloads](https://img.shields.io/npm/dw/dnstools.svg?style=flat-square)![Size](https://img.shields.io/bundlephobia/min/dnstools.svg?style=flat-square)![License](https://img.shields.io/npm/l/dnstools.svg?style=flat-square) 
+# DNS Tools [![Build](https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square)](https://travis-ci.org/tbhaxor/dnstools) ![Downloads](https://img.shields.io/npm/dw/dnstools.svg?style=flat-square)! [Size](https://img.shields.io/bundlephobia/min/dnstools.svg?style=flat-square) ![License](https://img.shields.io/npm/l/dnstools.svg?style=flat-square)
 
 > All in one dns query library for node js
 
