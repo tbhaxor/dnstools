@@ -18,8 +18,8 @@
     "dnstools",
     "tools"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Gurkirat Singh <tbhaxor@gmail.com>",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/tbhaxor/viewdns-js/issues"
   },
