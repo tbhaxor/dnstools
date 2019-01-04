@@ -1,6 +1,18 @@
-# DNS Tools [![Build](https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square)](https://travis-ci.org/tbhaxor/dnstools) ![Downloads](https://img.shields.io/npm/dw/dnstools.svg?style=flat-square) ![Size](https://img.shields.io/bundlephobia/min/dnstools.svg?style=flat-square) ![License](https://img.shields.io/npm/l/dnstools.svg?style=flat-square)
+<h1 align="center">
+  DNS Tools
+</h1>
 
-> All in one dns query library for node js
+<p align="center">
+
+<a href="https://travis-ci.org/tbhaxor/dnstools">
+    <img src="https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square">
+  </a>
+    <img src="https://img.shields.io/npm/dw/dnstools.svg?style=flat-square">
+    <img src="https://img.shields.io/bundlephobia/min/dnstools.svg?style=flat-square">
+    <img src="https://img.shields.io/npm/l/dnstools.svg?style=flat-square">
+
+</p>
+
 
 DNS Tools is powered by [view-dns](https://view-dns.info) and [ip-api](http://ip-api.com). It provides you with a bunch of dns related search api.
 
