@@ -8,16 +8,14 @@ DNS Tools
 <a href="https://travis-ci.org/tbhaxor/dnstools">
     <img src="https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square">
   </a>
-    <img src="https://img.shields.io/npm/dw/dnstools.svg?style=flat-square">
-    <img src="https://img.shields.io/bundlephobia/min/dnstools.svg?style=flat-square">
     <img src="https://img.shields.io/npm/l/dnstools.svg?style=flat-square">
-    <img src="https://img.shields.io/badge/Package%20Version-v1.0.1-yellow.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/Package%20Version-v1.0.2-yellow.svg?style=flat-square">
 
 </p>
 
 > All in one library for dns query
 
-DNS Tools is powered by [view-dns](https://view-dns.info) and [ip-api](http://ip-api.com). It provides you with a bunch of dns related search api.
+DNS Tools is powered by [view-dns](https://viewdns.info) and [ip-api](http://ip-api.com). It provides you with a bunch of dns related search api.
 
 ## Node versions
 
