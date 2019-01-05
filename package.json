@@ -1,6 +1,6 @@
 {
   "name": "dnstools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An all in one dns related tools",
   "main": "index.js",
   "scripts": {
