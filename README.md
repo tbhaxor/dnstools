@@ -10,7 +10,7 @@ DNS Tools
   </a>
     <img src="https://img.shields.io/npm/l/dnstools.svg?style=flat-square">
     <img src="https://img.shields.io/badge/Package%20Version-v1.0.2-yellow.svg?style=flat-square">
-
+    <img src="https://img.shields.io/npm/dw/dnstools.svg">
 </p>
 
 > All in one library for dns query
@@ -56,7 +56,7 @@ v8.15.0 +
 
     npm i dnstools@latest
 
-Demonstrating `Reverse IP Lookup`
+Demonstrating `IP Location`
 
 ```js
 
