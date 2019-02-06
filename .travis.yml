@@ -1,9 +1,12 @@
 language: node_js
+sudo: true
 node_js:
   - 8
 
 install:
   - npm install
+  - sudo npm i -g eslint
 
 script:
+  - eslint
   - npm test
