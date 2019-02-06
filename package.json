@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tbhaxor/dnstools.git"
+    "url": "git+https://github.com/tbhaxor/node-dnstools.git"
   },
   "keywords": [
     "view-dns",
@@ -21,9 +21,9 @@
   "author": "Gurkirat Singh <tbhaxor@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/tbhaxor/viewdns-js/issues"
+    "url": "https://github.com/tbhaxor/node-dnstools/issues"
   },
-  "homepage": "https://github.com/tbhaxor/viewdns-js#readme",
+  "homepage": "https://github.com/tbhaxor/node-dnstools#readme",
   "devDependencies": {
     "@types/node": "^10.12.18",
     "chai": "^4.2.0",
