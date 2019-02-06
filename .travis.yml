@@ -7,5 +7,5 @@ install:
   - npm i -g eslint
 
 script:
-  - eslint
+  - eslint .
   - npm test
