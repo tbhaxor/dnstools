@@ -23,8 +23,8 @@ function ReverseIPLookup(host, callback) {
     https.get(url, res => {
         res.setEncoding("utf8"); // setting response chunk encoding
 
-        let body = "" // declaring variable to 
-        res.on("data", chunk => {  // collecting chunks
+        let body = ""; // declaring variable to 
+        res.on("data", chunk => { // collecting chunks
             body += chunk;
         });
 
@@ -32,12 +32,15 @@ function ReverseIPLookup(host, callback) {
             return callback(e, null);
         });
 
-        res.on("end", () => {  // the chunk collection is over now
-            let data = []
+        res.on("end", () => { // the chunk collection is over now
+            let data = [];
 
             try { // performing the magic
                 body.split(/<table (.*)="1">/)[2].split(/<\/table>/)[0].split(" <td>").splice(1).forEach(domain => {
-                    data.push({ domain: domain.split("<")[0], lastResolved: domain.split("\">")[1].split("<")[0] }); // splitting ad getting required data only
+                    data.push({
+                        domain: domain.split("<")[0],
+                        lastResolved: domain.split("\">")[1].split("<")[0]
+                    }); // splitting ad getting required data only
                 });
             } catch (e) { // handling the error
                 return callback(e, null);
@@ -46,7 +49,7 @@ function ReverseIPLookup(host, callback) {
             return callback(null, data);
         });
 
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -73,7 +76,7 @@ function IP2Location(ip, callback) {
             return callback(null, JSON.parse(body));
         });
 
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -97,13 +100,13 @@ function Down(host, callback) {
         res.on("end", () => { // validate and return data on end of response read
             return callback(null, /not accessible/.test(body));
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
 
 function ASN(asn, callback) {
-    let url = `https://viewdns.info/asnlookup/?asn=${asn}`
+    let url = `https://viewdns.info/asnlookup/?asn=${asn}`;
 
     https.get(url, res => {
         res.setEncoding("utf8"); // setting response text encoding
@@ -120,7 +123,7 @@ function ASN(asn, callback) {
 
         res.on("end", () => { // validate and return data on end of response read
             try { // performing the magic
-                let d = {}
+                let d = {};
                 body.split("==============<br><br>")[1].split("<br><br><br></td>")[0].split("<br>").filter((x) => x != "").forEach(el => {
                     const [a, b] = el.split(": ");
                     d[a.toLowerCase()] = b.trimLeft().toLowerCase();
@@ -131,7 +134,7 @@ function ASN(asn, callback) {
                 return callback(e, null);
             }
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -154,18 +157,20 @@ function MXLookup(mailServer, callback) {
 
         res.on("end", () => { // validate and return data on end of response read
             try { // performing the magic
-                let d = []
+                let d = [];
                 body.split("<table border=\"1\">")[1].split("</table>")[0].split("<tr><td>").forEach(domain => {
                     const _domain = domain.split("</td></tr>")[0];
                     d.push(_domain);
                 });
 
-                return callback(null, { domains: d.splice(2) });
+                return callback(null, {
+                    domains: d.splice(2)
+                });
             } catch (e) { // handling the error
                 return callback(e, null);
             }
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -188,10 +193,14 @@ function CFTest(host, callback) {
 
         res.on("end", () => { // validate and return data on end of response read
             try { // performing the magic
-                let d = []
+                let d = [];
                 body.split("<table border=\"1\">")[1].split("</table>")[0].split("<tr><td>").splice(1).forEach(entry => {
                     const _entry = /\/images\/ok/.test(entry) ? entry.replace("<img src=\"/images/ok.GIF\" height=\"20\" alt=\"ok\">", false).replace("<center>", "").replace("</center></td></tr>", "").replace("<br>", "").split("</td><td>") : entry.replace("<img src=\"/images/error.GIF\" height=\"20\" alt=\"fail\">", true).replace("<center>", "").replace("</center></td></tr>", "").replace("<br>", "").split("</td><td>");
-                    d.push({ location: _entry[0].trim(), lookupResult: _entry[1].trim(), isBlocked: _entry[2] == 'false' ? false : true });
+                    d.push({
+                        location: _entry[0].trim(),
+                        lookupResult: _entry[1].trim(),
+                        isBlocked: _entry[2] == "false" ? false : true
+                    });
                 });
 
                 return callback(null, d);
@@ -199,7 +208,7 @@ function CFTest(host, callback) {
                 return callback(e, null);
             }
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -222,10 +231,14 @@ function PortScan(host, callback) {
 
         res.on("end", () => { // validate and return data on end of response read
             try { // performing the magic
-                let d = []
+                let d = [];
                 body.split("<table border=\"1\">")[1].split("</table>")[0].split("<tr><td>").splice(1).forEach(entry => {
                     const _entry = /\/images\/ok/.test(entry) ? entry.replace("<img src=\"/images/ok.GIF\" height=\"20\" alt=\"open\">", true).replace("<center>", "").replace("</center></td></tr>", "").replace("<br>", "").split("</td><td>") : entry.replace("<img src=\"/images/error.GIF\" height=\"20\" alt=\"closed\">", false).replace("<center>", "").replace("</center></td></tr>", "").replace("<br>", "").split("</td><td>");
-                    d.push({ port: _entry[0].trim(), service: _entry[1].trim(), isOpen: _entry[2] == 'false' ? false : true });
+                    d.push({
+                        port: _entry[0].trim(),
+                        service: _entry[1].trim(),
+                        isOpen: _entry[2] == "false" ? false : true
+                    });
                 });
 
                 return callback(null, d);
@@ -233,13 +246,13 @@ function PortScan(host, callback) {
                 return callback(e, null);
             }
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
 
 function IPHistory(host, callback) {
-    let url = `https://viewdns.info/iphistory/?domain=${host}`
+    let url = `https://viewdns.info/iphistory/?domain=${host}`;
 
     https.get(url, res => {
         res.setEncoding("utf8"); // setting response text encoding
@@ -256,11 +269,16 @@ function IPHistory(host, callback) {
 
         res.on("end", () => { // validate and return data on end of response read
             try { // performing the magic
-                let d = []
+                let d = [];
                 body.split("<table border=\"1\">")[1].split("</table>")[0].split("<tr><td>").splice(1).forEach(entry => {
 
                     const _entry = entry.split("</td><td>");
-                    d.push({ ip: _entry[0], location: _entry[1], ipOwner: _entry[2].split("\r\n")[0].replace("&#44;", ","), lastSeen: _entry[2].split("\">")[1].split("</td></tr>")[0] });
+                    d.push({
+                        ip: _entry[0],
+                        location: _entry[1],
+                        ipOwner: _entry[2].split("\r\n")[0].replace("&#44;", ","),
+                        lastSeen: _entry[2].split("\">")[1].split("</td></tr>")[0]
+                    });
                 });
 
                 return callback(null, d);
@@ -268,7 +286,7 @@ function IPHistory(host, callback) {
                 return callback(e, null);
             }
         });
-    }).on("error", e => {  // return error callback if error related to firing requests
+    }).on("error", e => { // return error callback if error related to firing requests
         return callback(e, null);
     });
 }
@@ -342,4 +360,4 @@ module.exports = {
      * @param {callback} callback
      */
     ipHistory: IPHistory
-}
+};
