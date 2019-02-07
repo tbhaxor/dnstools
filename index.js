@@ -83,8 +83,6 @@ function DNSSEC(host, callback) {
                     // handling the error
                     return callback(e, null);
                 }
-
-                return callback(null, data);
             });
         })
         .on("error", e => {
