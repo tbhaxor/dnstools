@@ -58,4 +58,11 @@ describe("Test Cases", () => {
             done();
         });
     }).timeout(15000);
+
+    it("DNSSEC Test", done => {
+        info.dnssec("nasa.gov", err => {
+            expect(err).to.be.equal(null);
+            done();
+        });
+    }).timeout(15000);
 });
