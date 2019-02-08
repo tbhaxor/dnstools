@@ -1,3 +1,10 @@
+/**
+ * @file dnsreport.js
+ * @description DNS Report
+ *
+ * @author Gurkirat Singh <tbhaxor[at]gmail.com>
+ *
+ */
 const https = require("https");
 
 module.exports = function DNSReport(host, callback) {
