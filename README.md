@@ -4,11 +4,11 @@ DNS Tools
 
 <p align="center">
 
-<a href="https://travis-ci.org/tbhaxor/dnstools">
-    <img src="https://img.shields.io/travis/tbhaxor/dnstools.svg?style=flat-square">
+<a href="https://travis-ci.org/tbhaxor/node-dnstools">
+    <img src="https://img.shields.io/travis/tbhaxor/node-dnstools.svg?style=flat-square">
   </a>
     <img src="https://img.shields.io/npm/l/dnstools.svg?style=flat-square">
-    <img src="https://img.shields.io/badge/Package%20Version-v1.0.2-yellow.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/Package%20Version-v2.0.0-yellow.svg?style=flat-square">
     <img src="https://img.shields.io/npm/dw/dnstools.svg?style=flat-square">
 </p>
 
