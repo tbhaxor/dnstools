@@ -2,7 +2,6 @@
 DNS Tools
 </h1>
 
-
 <p align="center">
 
 <a href="https://travis-ci.org/tbhaxor/dnstools">
@@ -39,7 +38,7 @@ v8.15.0 +
 - [x] Chinese Firewall Test
 - [x] Port Scan
 - [x] IP History
-- [ ] DNS Report
+- [x] DNS Report
 - [ ] WHOIS Report
 - [ ] Reverse Whois Lookup
 - [ ] Iran Firewall Test
@@ -49,7 +48,7 @@ v8.15.0 +
 - [ ] Reverse NS Lookup
 - [ ] DNS Propagation Checker
 - [ ] Reverse DNS Lookup
-- [ ] DNSSEC Test
+- [x] DNSSEC Test
 - [ ] MAC Address Lookup
 
 ## Install and Use
@@ -59,17 +58,15 @@ v8.15.0 +
 Demonstrating `IP Location`
 
 ```js
-
 const dnstool = require("dnstools");
 
 dnstool.ipLocation("172.9.8.5", (err, data) => {
-    if(err) {
-        console.log("error in query");
-    }
-    else {
-        console.log(data);
+  if (err) {
+    console.log("error in query");
+  } else {
+    console.log(data);
 
-        /*  OUTPUT
+    /*  OUTPUT
 
             { as: 'AS7018 AT&T Services, Inc.',
                 city: 'Los Angeles',
@@ -86,22 +83,22 @@ dnstool.ipLocation("172.9.8.5", (err, data) => {
                 timezone: 'America/Los_Angeles',
                 zip: '90032' }
         */
-    }
-})
+  }
+});
 ```
 
 ## API
 
-|Function|Description|Parameters|Callback Data|
-|:---|:-----|:---|:-----|
-|reverseIp|Reverse lookup to quickly shows all other domains hosted from the same server.|host: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Array[Object]`|
-|ipLocation|Display geographic information about a supplied IP address including city, country, latitude, longitude and more.|ip: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Object`|
-|isHostDown|Checks whether a specified site is down or not.|host: `string` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Boolean`|
-|asnLookup|Determine which company owns the specified Autonomous System Number|asn: `Number` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Object`|
-|reverseMX|Takes a mail server (e.g. `mail.google.com`) and quickly shows all other domains that use the same mail server|mailServer: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Array[Object]`|
-|chineseFirewall|Checks whether a site is blocked by the Great Firewall of China|host: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Array[Object]`|
-|portScan|Port scanner will test whether common ports are open on a server. Ports scanned are: 21, 22, 23, 25, 80, 110, 139, 143, 445, 1433, 1521, 3306 and 3389|host: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Array[Object]`|
-|ipHistory|Shows a historical list of IP addresses a given domain name has been hosted on as well as where that IP address is geographically located, and the owner of that IP address.|host: `String` <br> callback: `callback(err, data)`|err: `Error` or `String` <br> data: `Array[Object]`|
+| Function        | Description                                                                                                                                                                  | Parameters                                                | Callback Data                                       |
+| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------- | :-------------------------------------------------- |
+| reverseIp       | Reverse lookup to quickly shows all other domains hosted from the same server.                                                                                               | host: `String` <br> callback: `callback(err, data)`       | err: `Error` or `String` <br> data: `Array[Object]` |
+| ipLocation      | Display geographic information about a supplied IP address including city, country, latitude, longitude and more.                                                            | ip: `String` <br> callback: `callback(err, data)`         | err: `Error` or `String` <br> data: `Object`        |
+| isHostDown      | Checks whether a specified site is down or not.                                                                                                                              | host: `string` <br> callback: `callback(err, data)`       | err: `Error` or `String` <br> data: `Boolean`       |
+| asnLookup       | Determine which company owns the specified Autonomous System Number                                                                                                          | asn: `Number` <br> callback: `callback(err, data)`        | err: `Error` or `String` <br> data: `Object`        |
+| reverseMX       | Takes a mail server (e.g. `mail.google.com`) and quickly shows all other domains that use the same mail server                                                               | mailServer: `String` <br> callback: `callback(err, data)` | err: `Error` or `String` <br> data: `Array[Object]` |
+| chineseFirewall | Checks whether a site is blocked by the Great Firewall of China                                                                                                              | host: `String` <br> callback: `callback(err, data)`       | err: `Error` or `String` <br> data: `Array[Object]` |
+| portScan        | Port scanner will test whether common ports are open on a server. Ports scanned are: 21, 22, 23, 25, 80, 110, 139, 143, 445, 1433, 1521, 3306 and 3389                       | host: `String` <br> callback: `callback(err, data)`       | err: `Error` or `String` <br> data: `Array[Object]` |
+| ipHistory       | Shows a historical list of IP addresses a given domain name has been hosted on as well as where that IP address is geographically located, and the owner of that IP address. | host: `String` <br> callback: `callback(err, data)`       | err: `Error` or `String` <br> data: `Array[Object]` |
 
 ## License
 
