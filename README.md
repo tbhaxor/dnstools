@@ -14,6 +14,7 @@ DNS Tools
 <a href="https://nodei.co/npm/dnstools/"><img src="https://nodei.co/npm/dnstools.png?downloads=true&downloadRank=true&stars=true"></a>
 </h1>
 <br>
+
 > All in one library for dns query
 
 DNS Tools is powered by [view-dns](https://viewdns.info) and [ip-api](http://ip-api.com). It provides you with a bunch of dns related search api.
