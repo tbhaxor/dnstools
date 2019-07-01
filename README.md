@@ -20,6 +20,8 @@ DNS Tools
 DNS Tools is powered by [view-dns](https://viewdns.info) and [ip-api](http://ip-api.com). It provides you with a bunch of dns related search api.
 
 ## Node versions
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftbhaxor%2Fnode-dnstools.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftbhaxor%2Fnode-dnstools?ref=badge_shield)
+
 
 v8.15.0 +
 
@@ -108,6 +110,9 @@ dnstool.ipLocation("172.9.8.5", (err, data) => {
 ## License
 
 DNS Tool is licensed under [Apache-2.0](https://github.com/tbhaxor/dnstools/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftbhaxor%2Fnode-dnstools.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftbhaxor%2Fnode-dnstools?ref=badge_large)
 
 ## Contribution
 
