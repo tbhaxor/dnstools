@@ -4,6 +4,7 @@
   "description": "An all in one dns related tools",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint *.js --fix",
     "test": "mocha"
   },
   "repository": {
