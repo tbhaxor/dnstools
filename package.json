@@ -4,7 +4,8 @@
   "description": "An all in one dns related tools",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js --fix",
+    "build": "rimraf dist && grunt",
+    "lint": "tslint src/*.ts --fix",
     "test": "mocha"
   },
   "repository": {
@@ -35,7 +36,11 @@
     "grunt-cli": "^1.3.2",
     "grunt-ts": "^6.0.0-beta.22",
     "mocha": "^5.2.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "prettier": "^2.0.1",
+    "tslint": "^6.1.0"
+  }
 }
