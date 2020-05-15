@@ -10,6 +10,7 @@ module.exports = (grunt) => {
       },
 
       options: {
+        comments: true,
         declaration: true,
         rootDir: 'src',
         sourceMap: true,

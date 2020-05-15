@@ -8,6 +8,8 @@
     "lint": "tslint src/*.ts --fix",
     "test": "mocha"
   },
+  "type": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tbhaxor/node-dnstools.git"
