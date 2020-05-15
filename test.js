@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { ip2location, reverseIPLookup } = require('./dist/index');
+const { ip2location, reverseIPLookup, portScan } = require('./dist/index');
 
 describe('Node DNS Tools Test', () => {
   // ip2location
@@ -38,6 +38,30 @@ describe('Node DNS Tools Test', () => {
     it('should work with IPs also', (done) => {
       reverseIPLookup('8.8.8.8', (err, data) => {
         expect(data).length.gt(0);
+        done();
+      });
+    }).timeout(15000);
+  });
+
+  // port scan
+  describe('Port Scanner', () => {
+    it('should work with domain', (done) => {
+      portScan('google.com', (err, data) => {
+        expect(err).to.equal(null);
+        done();
+      });
+    }).timeout(15000);
+
+    it('should work with ip', (done) => {
+      portScan('8.8.8.8', (err, data) => {
+        expect(err).to.equal(null);
+        done();
+      });
+    }).timeout(15000);
+
+    it('should fail for private ip ranges', (done) => {
+      portScan('10.20.30.40', (err, data) => {
+        expect(err).to.not.equal(null);
         done();
       });
     }).timeout(15000);
