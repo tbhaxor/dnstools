@@ -9,7 +9,7 @@ import { IP2LocationCallback, IP2LocationData } from './interface';
  */
 export default function (
   host: string,
-  cb: IP2LocationCallback
+  cb?: IP2LocationCallback
 ): Promise<IP2LocationData> {
   return new Promise(async (resolve, reject) => {
     try {
