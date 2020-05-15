@@ -1,6 +1,12 @@
 import { ReverseIPCallback, ReverseIPData } from './interface';
 import fetch from '../../fetch';
 
+/**
+ * Method to find all other domains hosted from the same server. Useful for finding phishing sites or identifying other sites on the same shared hosting server.
+ *
+ * @param host Domain / IP
+ * @param cb The return callback
+ */
 export default function (
   host: string,
   cb?: ReverseIPCallback
