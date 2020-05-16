@@ -1,27 +1,36 @@
 import fetch from '../../fetch';
-import { IP2LocationCallback, IP2LocationData } from './interface';
+import { ReverseMXCallBack } from './interface';
 
 /**
- * Method to find the details of IP
  *
- * @param host IP Address or hostname
+ * @param host Mail server
  * @param cb The return callback
  */
 export default function (
   host: string,
-  cb?: IP2LocationCallback
-): Promise<IP2LocationData> {
+  cb?: ReverseMXCallBack
+): Promise<string[]> {
   return new Promise(async (resolve, reject) => {
     try {
-      const r = await fetch(
-        `http://ip-api.com/json/${host}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy,hosting`
-      );
+      const url = `https://viewdns.info/reversemx/?mx=${host}`;
 
-      if (typeof cb === 'function') {
-        cb(null, JSON.parse(r));
+      const r = await fetch(url);
+
+      const data: string[] = [];
+
+      r.split('<table border="1">')[1]
+        .split('</table>')[0]
+        .split('<tr><td>')
+        .forEach((domain) => {
+          const _domain = domain.split('</td></tr>')[0];
+          data.push(_domain);
+        });
+
+      if (cb && typeof cb === 'function') {
+        cb(null, data);
         resolve(null);
       } else {
-        resolve(JSON.parse(r));
+        resolve(data);
       }
     } catch (err) {
       if (err instanceof Error || err instanceof TypeError) {

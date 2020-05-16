@@ -36,6 +36,7 @@ export default function (
 
       if (cb && typeof cb === 'function') {
         cb(null, data);
+        resolve(null);
       } else {
         resolve(data);
       }

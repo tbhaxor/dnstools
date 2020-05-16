@@ -58,6 +58,7 @@ export default function (host, cb: PortScanCallBack): Promise<PortScanData[]> {
 
         if (cb && typeof cb === 'function') {
           cb(null, data);
+          resolve(null);
         } else {
           resolve(data);
         }
